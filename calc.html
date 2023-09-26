@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="invoer1">
+    <input type="number" id="invoer2">
+
+    <!-- Buttons hebben diverse events oa onclick="" -->
+    <button type="button" onclick="optellen()">
+        Optellen
+    </button>
+
+    <button type="button" onclick="vermenigvuldigen()">
+        Vermenigvuldigen
+    </button>
+
+    <button type="button" onclick="delen()">
+        Delen
+    </button>
+
+    <button type="button" onclick="aftrekken()">
+        Aftrekken
+    </button>
+
+    <script>
+        // Code buiten een function wordt direct uitgevoerd
+
+        // Function met een argument
+        function calculate(operation) {
+            // Haal de invoer veld op en lees de waarde uit
+            let invoer1Waarde = document.getElementById('invoer1').value;
+            let invoer2Waarde = document.getElementById('invoer2').value;
+
+            // If statement. Condition -> waar / niet waar
+            if (operation == '+') {
+                return parseFloat(invoer1Waarde) + parseFloat(invoer2Waarde);
+            } else if (operation == '-') {
+                return parseFloat(invoer1Waarde) - parseFloat(invoer2Waarde);
+            } else if (operation == '*') {
+                return parseFloat(invoer1Waarde) * parseFloat(invoer2Waarde);
+            }
+        
+        }
+        function optellen() {
+            // Code
+            let antwoord = calculate('+');
+            alert('Optellen antwoord is ' + antwoord);
+        }
+
+        function vermenigvuldigen() {
+            // Code
+            calculate('*');
+        }
+        function delen() {
+            // Code
+            
+            // Haal de invoer veld op en lees de waarde uit
+            let invoer1Waarde = document.getElementById('invoer1').value;
+            let invoer2Waarde = document.getElementById('invoer2').value;
+
+            // Doe de berekening. Je mag variabelen bij elkaar optellen en de uitkomst
+            // in een nieuwe variable plaatsen
+            let antwoord = parseFloat(invoer1Waarde) / parseFloat(invoer2Waarde);
+
+            alert(antwoord);
+        }
+
+        function aftrekken() {
+            // Code
+            calculate ('-')
+        }
+    </script>
+
+</body>
+</html>
